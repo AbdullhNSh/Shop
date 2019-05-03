@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         override fun getPageTitle(position: Int): CharSequence? {
             return when(position)
             {
-                 0 -> "News \t \t"
+                 0 -> "News"
                 1 -> "Notes"
 
                 else -> "Others"
