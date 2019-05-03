@@ -16,6 +16,8 @@
                 android:layout_gravity="end|bottom" android:layout_height="wrap_content"
                                                         android:layout_margin="16dp"
                                                         app:fabSize="auto"
+                                                        android:backgroundTint="#ff4500"
+                                                        android:src="@drawable/ic_add_black_24dp"
                                                         android:id="@+id/fabnote"
 
 
