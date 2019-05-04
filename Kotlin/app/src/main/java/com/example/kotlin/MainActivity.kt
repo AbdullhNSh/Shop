@@ -6,12 +6,14 @@ import android.provider.ContactsContract
 import android.support.v7.app.AlertDialog
 import android.support.v7.widget.LinearLayoutManager
 import android.widget.ArrayAdapter
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.linear_dialog.view.*
 
 class MainActivity() : AppCompatActivity() {
     private val notes = ArrayList<Notes?>()
+
     private val notesadapter = NotesAdapter(notes)
     private val dialogview by lazy{
         layoutInflater.inflate(R.layout.linear_dialog,null,false)

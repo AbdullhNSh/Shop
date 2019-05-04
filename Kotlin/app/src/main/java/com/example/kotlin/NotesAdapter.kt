@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import kotlinx.android.synthetic.main.item_row.view.*
+import kotlinx.android.synthetic.main.linear_dialog.view.*
 
 class NotesAdapter(private val notes : ArrayList<Notes?>) : RecyclerView.Adapter<NotesAdapter.NoteHolder>()
 {
@@ -28,6 +29,7 @@ class NotesAdapter(private val notes : ArrayList<Notes?>) : RecyclerView.Adapter
             tvDes.text = current?.description
             tvtime.text = current?.date
         }
+
     }
     inner class NoteHolder(itemview : View ) : RecyclerView.ViewHolder(itemview)
     {
