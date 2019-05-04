@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.item_row.*
 import kotlinx.android.synthetic.main.linear_dialog.view.*
 
 class MainActivity() : AppCompatActivity() {
@@ -61,6 +62,10 @@ class MainActivity() : AppCompatActivity() {
         FirebaseDatabase.getInstance()
             .reference
             .addChildEventListener(object :ChildEventListener{
+                override fun onChildMoved(p0: DataSnapshot, p1: String?) {
+
+                }
+
                 override fun onChildAdded(p0: DataSnapshot, p1: String?) {
                     val note  = p0.getValue(Notes::class.java)
                     notes.add(0,note)
@@ -68,23 +73,17 @@ class MainActivity() : AppCompatActivity() {
                 }
 
                 override fun onChildRemoved(p0: DataSnapshot) {
-                    val deletenote = p0.getValue(Notes::class.java)
-                    notes.remove(deletenote)
                 }
 
                 override fun onCancelled(p0: DatabaseError) = p0.toException().printStackTrace()
-                override fun onChildMoved(p0: DataSnapshot, p1: String?) {
-
-                }
-
                 override fun onChildChanged(ds: DataSnapshot, key: String?) {
                     val updatenote  = ds.getValue(Notes::class.java)
-
                 }
 
             })
-
     }
+
+
 
 
 
