@@ -73,9 +73,7 @@ class MainActivity() : AppCompatActivity() {
                 }
 
                 override fun onChildRemoved(p0: DataSnapshot) {
-                    val note  = p0.getValue(Notes::class.java)
-                    notes.add(note)
-                    notesadapter.notifyItemInserted(0)
+
                 }
 
                 override fun onCancelled(p0: DatabaseError) = p0.toException().printStackTrace()

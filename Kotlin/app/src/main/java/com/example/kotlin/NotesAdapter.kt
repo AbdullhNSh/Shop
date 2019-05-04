@@ -39,6 +39,14 @@ class NotesAdapter(private val notes : ArrayList<Notes?>) : RecyclerView.Adapter
 
             }
         }
+        init {
+            itemview.btndelete.setOnClickListener {
+                if(itemview.btndelete.text == "DELETE")
+                    notes.remove()
+                notifyItemRemoved(adapterPosition)
+            }
+        }
+
     }
 
 
